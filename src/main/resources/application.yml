@@ -1,0 +1,11 @@
+server:
+  port: 805
+
+spring:
+  application:
+    name: zuul
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:803/eureka/
