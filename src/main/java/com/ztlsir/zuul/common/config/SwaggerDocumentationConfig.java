@@ -28,6 +28,7 @@ public class SwaggerDocumentationConfig implements SwaggerResourcesProvider {
         // 排除自身, 将其他的服务添加进去
         return discoveryClient
                 .getServices().stream().filter(serviceName -> !serviceName.equals(applicationName))
+//                .getServices().stream()
                 .collect(ArrayList::new,
                         (resources, name) -> resources.add(swaggerResource(name, "/" + name + "/v2/api-docs", "2.0")),
                         ArrayList::addAll);

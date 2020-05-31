@@ -12,14 +12,22 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     @Override
     public void configure(HttpSecurity http) throws Exception {
         // 请求进行拦截 验证 accessToken
-        http.authorizeRequests()
+        http.csrf().disable()
+                .authorizeRequests()
                 //放行
                 .antMatchers(
                         //Swagger-网关
                         "/swagger-ui.html",
-                        "/*/v2/api-docs/**"
-                ).permitAll()
+                        "/login/**",
+                        "/oauth/**",
+                        "/webjars/**",
+                        "/v2/**",
+                        "/swagger-resources/**",
+                        "/*/v2/api-docs/**",
+                        "/oauth2/oauth/**",
+                        "/actuator/**"
                 //拦截其他所有请求
+                ).permitAll()
                 .anyRequest().authenticated();
     }
 }

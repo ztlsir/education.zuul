@@ -2,8 +2,9 @@ server:
   port: 80
 
 spring:
-  application:
-    name: zuul
+  cloud:
+    config:
+      profile: ci
 
 eureka:
   client:

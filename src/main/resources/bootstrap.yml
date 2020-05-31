@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: zuul
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config
 
 eureka:
   client:
