@@ -24,8 +24,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
                         "/v2/**",
                         "/swagger-resources/**",
                         "/*/v2/api-docs/**",
-                        "/oauth2/oauth/**",
-                        "/actuator/**"
+                        "/oauth2/oauth/**"
                 //拦截其他所有请求
                 ).permitAll()
                 .anyRequest().authenticated();
